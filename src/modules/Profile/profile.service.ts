@@ -10,6 +10,7 @@ type TProfilePayload = {
     resumeUrl?: string;
     location?: string;
     contactEmail?: string;
+    phone?: string;
     socialLinks?: { platform: string; url: string; order?: number }[];
 };
 
@@ -44,6 +45,7 @@ const updateProfile = async (userId: string, payload: Partial<TProfilePayload>) 
                 resumeUrl: data.resumeUrl,
                 location: data.location,
                 contactEmail: data.contactEmail,
+                phone: data.phone,
                 userId,
                 socialLinks: socialLinks ? { create: socialLinks } : undefined,
             },

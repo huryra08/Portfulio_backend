@@ -1,0 +1,17 @@
+model Education {
+  id          String    @id @default(uuid())
+  institution String
+  degree      String
+  field       String?
+  grade       String?   // e.g. "GPA 3.8" or "First class"
+  location    String?
+  startDate   DateTime
+  endDate     DateTime? // null = still studying
+  description String?   @db.Text
+  order       Int       @default(0)
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("educations")
+}

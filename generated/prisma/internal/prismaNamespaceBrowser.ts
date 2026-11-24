@@ -17,8 +17,8 @@
 
 import * as runtime from "@prisma/client/runtime/index-browser"
 
-export type * from '../models'
-export type * from './prismaNamespace'
+export type * from '../models.js'
+export type * from './prismaNamespace.js'
 
 export const Decimal = runtime.Decimal
 
@@ -51,8 +51,9 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  Experience: 'Experience',
+  Certificate: 'Certificate',
   Education: 'Education',
+  Experience: 'Experience',
   Message: 'Message',
   Post: 'Post',
   Profile: 'Profile',
@@ -60,6 +61,7 @@ export const ModelName = {
   Project: 'Project',
   ProjectImage: 'ProjectImage',
   ProjectSkill: 'ProjectSkill',
+  ProjectChallenge: 'ProjectChallenge',
   Skill: 'Skill',
   User: 'User'
 } as const
@@ -80,6 +82,42 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const CertificateScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  issuer: 'issuer',
+  issueDate: 'issueDate',
+  expiryDate: 'expiryDate',
+  credentialId: 'credentialId',
+  credentialUrl: 'credentialUrl',
+  imageUrl: 'imageUrl',
+  description: 'description',
+  order: 'order',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type CertificateScalarFieldEnum = (typeof CertificateScalarFieldEnum)[keyof typeof CertificateScalarFieldEnum]
+
+
+export const EducationScalarFieldEnum = {
+  id: 'id',
+  institution: 'institution',
+  degree: 'degree',
+  field: 'field',
+  grade: 'grade',
+  location: 'location',
+  startDate: 'startDate',
+  endDate: 'endDate',
+  description: 'description',
+  order: 'order',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type EducationScalarFieldEnum = (typeof EducationScalarFieldEnum)[keyof typeof EducationScalarFieldEnum]
+
+
 export const ExperienceScalarFieldEnum = {
   id: 'id',
   company: 'company',
@@ -94,21 +132,6 @@ export const ExperienceScalarFieldEnum = {
 } as const
 
 export type ExperienceScalarFieldEnum = (typeof ExperienceScalarFieldEnum)[keyof typeof ExperienceScalarFieldEnum]
-
-
-export const EducationScalarFieldEnum = {
-  id: 'id',
-  institution: 'institution',
-  degree: 'degree',
-  field: 'field',
-  startDate: 'startDate',
-  endDate: 'endDate',
-  description: 'description',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type EducationScalarFieldEnum = (typeof EducationScalarFieldEnum)[keyof typeof EducationScalarFieldEnum]
 
 
 export const MessageScalarFieldEnum = {
@@ -149,6 +172,7 @@ export const ProfileScalarFieldEnum = {
   resumeUrl: 'resumeUrl',
   location: 'location',
   contactEmail: 'contactEmail',
+  phone: 'phone',
   userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -206,6 +230,17 @@ export const ProjectSkillScalarFieldEnum = {
 } as const
 
 export type ProjectSkillScalarFieldEnum = (typeof ProjectSkillScalarFieldEnum)[keyof typeof ProjectSkillScalarFieldEnum]
+
+
+export const ProjectChallengeScalarFieldEnum = {
+  id: 'id',
+  problem: 'problem',
+  solution: 'solution',
+  order: 'order',
+  projectId: 'projectId'
+} as const
+
+export type ProjectChallengeScalarFieldEnum = (typeof ProjectChallengeScalarFieldEnum)[keyof typeof ProjectChallengeScalarFieldEnum]
 
 
 export const SkillScalarFieldEnum = {

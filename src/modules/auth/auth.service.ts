@@ -83,13 +83,7 @@ const loginUser = async (payload: { email: string; password: string }) => {
 const getMe = async (userId: string) => {
     const user = await prisma.user.findUniqueOrThrow({
         where: { id: userId },
-        include: { profile: 
-            { include: 
-                { socialLinks: true 
-
-                } 
-            } 
-        },
+        include: { profile: { include: { socialLinks: true } } },
     });
 
     const { password, ...userWithoutPassword } = user;

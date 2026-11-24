@@ -16,10 +16,10 @@
  */
 
 import * as runtime from "@prisma/client/runtime/client"
-import type * as Prisma from "../models"
-import { type PrismaClient } from "./class"
+import type * as Prisma from "../models.js"
+import { type PrismaClient } from "./class.js"
 
-export type * from '../models'
+export type * from '../models.js'
 
 export type DMMF = typeof runtime.DMMF
 
@@ -397,8 +397,9 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  Experience: 'Experience',
+  Certificate: 'Certificate',
   Education: 'Education',
+  Experience: 'Experience',
   Message: 'Message',
   Post: 'Post',
   Profile: 'Profile',
@@ -406,6 +407,7 @@ export const ModelName = {
   Project: 'Project',
   ProjectImage: 'ProjectImage',
   ProjectSkill: 'ProjectSkill',
+  ProjectChallenge: 'ProjectChallenge',
   Skill: 'Skill',
   User: 'User'
 } as const
@@ -423,81 +425,81 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "experience" | "education" | "message" | "post" | "profile" | "socialLink" | "project" | "projectImage" | "projectSkill" | "skill" | "user"
+    modelProps: "certificate" | "education" | "experience" | "message" | "post" | "profile" | "socialLink" | "project" | "projectImage" | "projectSkill" | "projectChallenge" | "skill" | "user"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
-    Experience: {
-      payload: Prisma.$ExperiencePayload<ExtArgs>
-      fields: Prisma.ExperienceFieldRefs
+    Certificate: {
+      payload: Prisma.$CertificatePayload<ExtArgs>
+      fields: Prisma.CertificateFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.ExperienceFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload> | null
+          args: Prisma.CertificateFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CertificatePayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.ExperienceFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>
+          args: Prisma.CertificateFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CertificatePayload>
         }
         findFirst: {
-          args: Prisma.ExperienceFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload> | null
+          args: Prisma.CertificateFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CertificatePayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.ExperienceFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>
+          args: Prisma.CertificateFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CertificatePayload>
         }
         findMany: {
-          args: Prisma.ExperienceFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>[]
+          args: Prisma.CertificateFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CertificatePayload>[]
         }
         create: {
-          args: Prisma.ExperienceCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>
+          args: Prisma.CertificateCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CertificatePayload>
         }
         createMany: {
-          args: Prisma.ExperienceCreateManyArgs<ExtArgs>
+          args: Prisma.CertificateCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         createManyAndReturn: {
-          args: Prisma.ExperienceCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>[]
+          args: Prisma.CertificateCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CertificatePayload>[]
         }
         delete: {
-          args: Prisma.ExperienceDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>
+          args: Prisma.CertificateDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CertificatePayload>
         }
         update: {
-          args: Prisma.ExperienceUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>
+          args: Prisma.CertificateUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CertificatePayload>
         }
         deleteMany: {
-          args: Prisma.ExperienceDeleteManyArgs<ExtArgs>
+          args: Prisma.CertificateDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.ExperienceUpdateManyArgs<ExtArgs>
+          args: Prisma.CertificateUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateManyAndReturn: {
-          args: Prisma.ExperienceUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>[]
+          args: Prisma.CertificateUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CertificatePayload>[]
         }
         upsert: {
-          args: Prisma.ExperienceUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>
+          args: Prisma.CertificateUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CertificatePayload>
         }
         aggregate: {
-          args: Prisma.ExperienceAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateExperience>
+          args: Prisma.CertificateAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCertificate>
         }
         groupBy: {
-          args: Prisma.ExperienceGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.ExperienceGroupByOutputType>[]
+          args: Prisma.CertificateGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CertificateGroupByOutputType>[]
         }
         count: {
-          args: Prisma.ExperienceCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.ExperienceCountAggregateOutputType> | number
+          args: Prisma.CertificateCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CertificateCountAggregateOutputType> | number
         }
       }
     }
@@ -572,6 +574,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.EducationCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.EducationCountAggregateOutputType> | number
+        }
+      }
+    }
+    Experience: {
+      payload: Prisma.$ExperiencePayload<ExtArgs>
+      fields: Prisma.ExperienceFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ExperienceFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ExperienceFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>
+        }
+        findFirst: {
+          args: Prisma.ExperienceFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ExperienceFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>
+        }
+        findMany: {
+          args: Prisma.ExperienceFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>[]
+        }
+        create: {
+          args: Prisma.ExperienceCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>
+        }
+        createMany: {
+          args: Prisma.ExperienceCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ExperienceCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>[]
+        }
+        delete: {
+          args: Prisma.ExperienceDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>
+        }
+        update: {
+          args: Prisma.ExperienceUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>
+        }
+        deleteMany: {
+          args: Prisma.ExperienceDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ExperienceUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ExperienceUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>[]
+        }
+        upsert: {
+          args: Prisma.ExperienceUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExperiencePayload>
+        }
+        aggregate: {
+          args: Prisma.ExperienceAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateExperience>
+        }
+        groupBy: {
+          args: Prisma.ExperienceGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ExperienceGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ExperienceCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ExperienceCountAggregateOutputType> | number
         }
       }
     }
@@ -1093,6 +1169,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    ProjectChallenge: {
+      payload: Prisma.$ProjectChallengePayload<ExtArgs>
+      fields: Prisma.ProjectChallengeFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ProjectChallengeFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectChallengePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ProjectChallengeFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectChallengePayload>
+        }
+        findFirst: {
+          args: Prisma.ProjectChallengeFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectChallengePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ProjectChallengeFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectChallengePayload>
+        }
+        findMany: {
+          args: Prisma.ProjectChallengeFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectChallengePayload>[]
+        }
+        create: {
+          args: Prisma.ProjectChallengeCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectChallengePayload>
+        }
+        createMany: {
+          args: Prisma.ProjectChallengeCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ProjectChallengeCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectChallengePayload>[]
+        }
+        delete: {
+          args: Prisma.ProjectChallengeDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectChallengePayload>
+        }
+        update: {
+          args: Prisma.ProjectChallengeUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectChallengePayload>
+        }
+        deleteMany: {
+          args: Prisma.ProjectChallengeDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ProjectChallengeUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ProjectChallengeUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectChallengePayload>[]
+        }
+        upsert: {
+          args: Prisma.ProjectChallengeUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProjectChallengePayload>
+        }
+        aggregate: {
+          args: Prisma.ProjectChallengeAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateProjectChallenge>
+        }
+        groupBy: {
+          args: Prisma.ProjectChallengeGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProjectChallengeGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ProjectChallengeCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProjectChallengeCountAggregateOutputType> | number
+        }
+      }
+    }
     Skill: {
       payload: Prisma.$SkillPayload<ExtArgs>
       fields: Prisma.SkillFieldRefs
@@ -1280,6 +1430,42 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const CertificateScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  issuer: 'issuer',
+  issueDate: 'issueDate',
+  expiryDate: 'expiryDate',
+  credentialId: 'credentialId',
+  credentialUrl: 'credentialUrl',
+  imageUrl: 'imageUrl',
+  description: 'description',
+  order: 'order',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type CertificateScalarFieldEnum = (typeof CertificateScalarFieldEnum)[keyof typeof CertificateScalarFieldEnum]
+
+
+export const EducationScalarFieldEnum = {
+  id: 'id',
+  institution: 'institution',
+  degree: 'degree',
+  field: 'field',
+  grade: 'grade',
+  location: 'location',
+  startDate: 'startDate',
+  endDate: 'endDate',
+  description: 'description',
+  order: 'order',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type EducationScalarFieldEnum = (typeof EducationScalarFieldEnum)[keyof typeof EducationScalarFieldEnum]
+
+
 export const ExperienceScalarFieldEnum = {
   id: 'id',
   company: 'company',
@@ -1294,21 +1480,6 @@ export const ExperienceScalarFieldEnum = {
 } as const
 
 export type ExperienceScalarFieldEnum = (typeof ExperienceScalarFieldEnum)[keyof typeof ExperienceScalarFieldEnum]
-
-
-export const EducationScalarFieldEnum = {
-  id: 'id',
-  institution: 'institution',
-  degree: 'degree',
-  field: 'field',
-  startDate: 'startDate',
-  endDate: 'endDate',
-  description: 'description',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type EducationScalarFieldEnum = (typeof EducationScalarFieldEnum)[keyof typeof EducationScalarFieldEnum]
 
 
 export const MessageScalarFieldEnum = {
@@ -1349,6 +1520,7 @@ export const ProfileScalarFieldEnum = {
   resumeUrl: 'resumeUrl',
   location: 'location',
   contactEmail: 'contactEmail',
+  phone: 'phone',
   userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -1406,6 +1578,17 @@ export const ProjectSkillScalarFieldEnum = {
 } as const
 
 export type ProjectSkillScalarFieldEnum = (typeof ProjectSkillScalarFieldEnum)[keyof typeof ProjectSkillScalarFieldEnum]
+
+
+export const ProjectChallengeScalarFieldEnum = {
+  id: 'id',
+  problem: 'problem',
+  solution: 'solution',
+  order: 'order',
+  projectId: 'projectId'
+} as const
+
+export type ProjectChallengeScalarFieldEnum = (typeof ProjectChallengeScalarFieldEnum)[keyof typeof ProjectChallengeScalarFieldEnum]
 
 
 export const SkillScalarFieldEnum = {
@@ -1707,8 +1890,9 @@ export interface PrismaClientOptionsWithAdapter extends PrismaClientBaseOptions 
  */
 export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaClientOptionsWithAdapter
 export type GlobalOmitConfig = {
-  experience?: Prisma.ExperienceOmit
+  certificate?: Prisma.CertificateOmit
   education?: Prisma.EducationOmit
+  experience?: Prisma.ExperienceOmit
   message?: Prisma.MessageOmit
   post?: Prisma.PostOmit
   profile?: Prisma.ProfileOmit
@@ -1716,6 +1900,7 @@ export type GlobalOmitConfig = {
   project?: Prisma.ProjectOmit
   projectImage?: Prisma.ProjectImageOmit
   projectSkill?: Prisma.ProjectSkillOmit
+  projectChallenge?: Prisma.ProjectChallengeOmit
   skill?: Prisma.SkillOmit
   user?: Prisma.UserOmit
 }

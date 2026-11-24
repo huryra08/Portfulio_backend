@@ -7,6 +7,8 @@ import { projectRoutes } from "./modules/Project/project.route";
 import { skillRoutes } from "./modules/Skill/skill.route";
 import { profileRoutes } from "./modules/Profile/profile.route";
 import { experienceRoutes } from "./modules/Experience/experience.route";
+import { educationRoutes } from "./modules/Education/education.route";
+import { certificateRoutes } from "./modules/Certificate/certificate.route";
 import { messageRoutes } from "./modules/Message/message.route";
 
 const app: Application = express();
@@ -32,6 +34,8 @@ app.use("/api/projects", projectRoutes);
 app.use("/api/skills", skillRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/experience", experienceRoutes);
+app.use("/api/education", educationRoutes);
+app.use("/api/certificates", certificateRoutes);
 app.use("/api/messages", messageRoutes);
 
 export default app;

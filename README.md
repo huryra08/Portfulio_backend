@@ -13,6 +13,17 @@ npm run seed                      # creates the ADMIN user
 npm run dev                       # http://localhost:5000
 ```
 
+## Deploy to Vercel
+
+Link the directory to the Vercel project once before deploying:
+
+```bash
+npx vercel link --project portfolio-backend --scope huryra-s-projects
+npx vercel deploy
+```
+
+Set the backend's `APP_URL` environment variable to the frontend's origin (for example, `https://your-portfolio.vercel.app`). A trailing slash is allowed and is removed before applying CORS.
+
 Import `Portfulio API.postman_collection.json`, run **Auth > Login** (it saves `adminToken`), then try the rest.
 
 ## Structure

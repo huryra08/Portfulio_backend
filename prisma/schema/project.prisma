@@ -18,6 +18,7 @@ model Project {
 
   images      ProjectImage[]
   skills      ProjectSkill[]
+  challenges  ProjectChallenge[]
 
   @@index([published, featured])
   @@map("projects")
@@ -46,4 +47,18 @@ model ProjectSkill {
 
   @@id([projectId, skillId])
   @@map("project_skills")
+}
+
+// "Problem and how I fixed it" entries shown on the project page
+model ProjectChallenge {
+  id        String  @id @default(uuid())
+  problem   String  @db.Text
+  solution  String  @db.Text
+  order     Int     @default(0)
+
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+  @@map("project_challenges")
 }
